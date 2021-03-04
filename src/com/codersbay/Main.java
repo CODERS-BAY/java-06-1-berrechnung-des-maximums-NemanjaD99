@@ -1,6 +1,5 @@
 package com.codersbay;
 
-import java.awt.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -29,10 +28,27 @@ public class Main {
             numbers = newArray;
             System.out.println(Arrays.toString(newArray));
 //----------------------------------------------------------
-            Arrays.sort(numbers);
-            System.out.print("Max= " + numbers[numbers.length - 1]);
 
 
+            int temp;
+            for (int i = 0; i < numbers.length; i++) {
+                System.out.print(numbers[i] + " ");
+                for (int j = 0; j < numbers.length - 1; j++) {
+                    // System.out.print( a[j+1]+" --- ");
+                    System.out.println(Arrays.toString(numbers));
+                    if (numbers[j] > numbers[j + 1]) {
+                        temp = numbers[j];
+                        numbers[j] = numbers[j + 1];
+                        numbers[j + 1] = temp;
+                    }
+                }
+            }
+            System.out.print("           \nAfter Sorting : ");
+            for (int i = 0; i < numbers.length; i++) {
+                System.out.print(numbers[i] + " ");
+
+            }
+            System.out.print("Max= " +(numbers[numbers.length - 1]+" "));
         }
     }
 
